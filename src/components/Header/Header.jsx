@@ -6,7 +6,6 @@ import './Header.css'
 
 const Header = () => {
     const [open, setOpen] = useState(false);
-    console.log(open);
     return (
         <header>
             <section className='shadow-sm'>
