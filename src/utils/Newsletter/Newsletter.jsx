@@ -14,7 +14,7 @@ const Newsletter = () => {
                         <p className='mb-10 text-[15px]'>Lorem Ipsum as their default model text, and a search for 'Lorem Ipsum' will uncover many web sites still in their infancy</p>
                         <div className="flex flex-col md:flex-row justify-between md:items-center md:bg-white py-3 md:px-4 rounded-full gap-3">
                             <input className='rounded-full flex-1 md:flex-none py-3 px-4 md:py-0 md:px-0' type="email" name="email" id="email" placeholder="example@chefrecipe.com" />
-                            <button type="submit" className='flex-1 md:flex-none transition-all duration-300 py-2 px-4 rounded-full md:text-white font-bold border-2 border-[#232B38] md:bg-[#EEBF00] hover:bg-[#232B38] text-[#232B38] hover:text-white '>Subscribe</button>
+                            <button type="submit" className='flex-1 md:flex-none transition-all duration-300 py-2 px-4 rounded-full md:text-white font-bold border-2 border-[#232B38] md:border-transparent md:bg-[#976736] hover:bg-[#232B38] text-[#232B38] hover:text-white '>Subscribe</button>
                         </div>
                     </div>
                 </div>
