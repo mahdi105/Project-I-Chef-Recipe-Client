@@ -9,7 +9,7 @@ const Footer = () => {
                 <div>
                     <h2 className='text-2xl font-[900] text-[#8d5a28] uppercase mb-3'>Chef Recipes</h2>
                     <p className='text-gray-300 text-[12px] mb-6'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore veniam fugiat inventore dolorum recusandae quod ex. Facere ipsam .</p>
-                    <button className='py-2 text-[13px] rounded hover:bg-[#966635] px-4 bg-[#212631] text-white'>Read More</button>
+                    <button className='transition-all duration-300 py-2 text-[13px] rounded hover:bg-[#966635] px-4 bg-[#212631] text-white'>Read More</button>
                 </div>
                 <div>
                     <h2 className='text-xl font-semibold text-white mb-3'>Explore</h2>
