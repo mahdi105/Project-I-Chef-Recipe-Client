@@ -1,4 +1,5 @@
 import React from 'react';
+import Banner from '../utils/Banner/Banner'
 import { useLoaderData } from 'react-router-dom';
 
 const Home = () => {
@@ -6,12 +7,7 @@ const Home = () => {
     console.log(chefs);
     return (
         <main>
-            <section >
-                <div className='flex gap-2 items-center justify-start'>
-                    <span className='font-[700] text-[16px]'>Wellcome to - </span>
-                    <img className='w-[35px]' src="/abc.png" alt="" />
-                </div>
-            </section>
+            <Banner></Banner>
         </main>
     );
 };
