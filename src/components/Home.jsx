@@ -5,10 +5,14 @@ const Home = () => {
     const chefs = useLoaderData();
     console.log(chefs);
     return (
-        <div>
-            home
-            {/* <img src={chefs[0].image} alt="" /> */}
-        </div>
+        <main>
+            <section >
+                <div className='flex gap-2 items-center justify-start'>
+                    <span className='font-[700] text-[16px]'>Wellcome to - </span>
+                    <img className='w-[35px]' src="/abc.png" alt="" />
+                </div>
+            </section>
+        </main>
     );
 };
 
