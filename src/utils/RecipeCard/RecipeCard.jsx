@@ -1,5 +1,7 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 
+const notifySuccess = () => toast.success("Added to favourite list");
 const RecipeCard = ({recipe}) => {
     const {name, image, process, rating, ingredients} = recipe;
     return (
@@ -17,7 +19,7 @@ const RecipeCard = ({recipe}) => {
                     }
                 </ul>
                 <p className='mb-3 font-bold text-[14px]'>Rating: {rating}</p>
-                <button className='py-3 w-full rounded-md text-white hover:text-black transition-all duration-300 font-bold text-[14px] hover:bg-[#f6a04a] bg-[#976736]'>Favourite</button>
+                <button onClick={notifySuccess} className='py-3 w-full rounded-md text-white hover:text-black transition-all duration-300 font-bold text-[14px] hover:bg-[#f6a04a] bg-[#976736]'>Favourite</button>
             </div>
         </div>
     );
