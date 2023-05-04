@@ -20,7 +20,7 @@ const ChefCard = ({ chef }) => {
                     <li>{likes} Likes</li>
                 </ul>
                 <div className='mb-3'>
-                    <Link className='bg-[#976736] py-3 px-5 rounded text-white hover:bg-[#8a4c0e]' to={`/chef/recipes/${id}`}>View Recipes</Link>
+                    <Link className='bg-[#976736] py-3 px-5 rounded text-white hover:bg-[#8a4c0e]' to={`/recipes/${id}`}>View Recipes</Link>
                 </div>
             </div>
         </div>

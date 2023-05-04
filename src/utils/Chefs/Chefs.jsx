@@ -10,7 +10,6 @@ const Chefs = () => {
         .then(data => setChefs(data))
         .catch(error => console.log(error.message));
     },[]);
-    console.log(chefs);
     return (
         <section className='container mx-auto px-2 md:px-0 lg:px-10 pt-20 pb-28'>
             <SectionHeading>Popular Indian Chefs</SectionHeading>

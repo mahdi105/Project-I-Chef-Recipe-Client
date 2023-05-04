@@ -6,6 +6,7 @@ import Login from "../components/Login";
 import Register from "../components/Register";
 import Blog from "../components/Blog";
 import About from "../components/About";
+import ChefRecipes from "../components/ChefRecipes";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,11 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/recipes/:id',
+                element: <ChefRecipes></ChefRecipes>,
+                loader: ({params}) => fetch(`https://assignment-recipes-server-mahdi105.vercel.app/chef/recipes/${params.id}`)
             },
             {
                 path: '/about',
