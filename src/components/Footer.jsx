@@ -24,14 +24,14 @@ const Footer = () => {
                 <div>
                     <h2 className='text-xl font-semibold text-white mb-3'>Recent Recipes</h2>
                     <div className='flex gap-3 mb-2'>
-                        <img className='w-[120px] h-[90px]' src="/images/chicken-curry.jpg" alt="" />
+                        <img className='w-[120px] h-[90px]' src="/images/chicken-curry.webp" alt="" />
                         <div>
                             <h3 className='mb-1 font-semibold text-gray-300 text-[15px]'>Chicken Curry</h3>
                             <p className='text-[12px] text-gray-400'>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
                         </div>
                     </div>
                     <div className='flex gap-3'>
-                        <img className='w-[120px] h-[90px]' src="/images/chicken-curry.jpg" alt="" />
+                        <img className='w-[120px] h-[90px]' src="/images/chicken-curry.webp" alt="" />
                         <div>
                             <h3 className='mb-1 font-semibold text-gray-300 text-[15px]'>Chicken Curry</h3>
                             <p className='text-[12px] text-gray-400'>Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
