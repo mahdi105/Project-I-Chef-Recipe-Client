@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { FaCaretRight } from "react-icons/fa";
+import SectionHeading from '../utils/SectionHeading/SectionHeading';
+import RecipeCard from '../utils/RecipeCard/RecipeCard';
 
 const ChefRecipes = () => {
     const [chefs, setChefs] = useState([]);
@@ -33,12 +35,21 @@ const ChefRecipes = () => {
                        <div className='mt-4'>
                         <h3 className='font-bold text-xl mb-2'>Profile</h3>
                         <div className='flex gap-10'>
-                            <span className='flex items-center'><FaCaretRight/>{recipes} <span>Recipes</span></span>
+                            <span className='flex items-center'>
+                                <FaCaretRight/> .{recipes} <span> Recipes</span></span>
                             <span>. {experience} Years of Experience</span>
-                            <span>. {recipes} Likes</span>
+                            <span>. {likes} Likes</span>
                         </div>
                        </div>
                     </div>
+                </div>
+            </section>
+            <section className='container mx-auto px-2 md:px-0 lg:px-10 py-16'>
+                <SectionHeading>All available recipes</SectionHeading>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                    {
+                        chefrecipes?.map(recipe => <RecipeCard recipe={recipe} key={recipe.id}></RecipeCard>)
+                    }
                 </div>
             </section>
         </main>
