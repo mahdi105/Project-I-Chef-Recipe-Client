@@ -9,7 +9,7 @@ const LatestBlog = () => {
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-5 mb-10'>
                     <div className='bg-white rounded'>
                         <div>
-                            <img className='w-full object-cover rounded-t' src="/images/chicken-curry.jpg" alt="" />
+                            <img className='w-full object-cover rounded-t' src="/images/chicken-curry.webp" alt="" />
                         </div>
                         <div className='p-4'>
                             <div className='mb-3 flex items-center justify-between'>
@@ -27,7 +27,7 @@ const LatestBlog = () => {
                     </div>
                     <div className='bg-white rounded'>
                         <div>
-                            <img className='w-full object-cover rounded-t' src="/images/kacchi.jpg" alt="" />
+                            <img className='w-full object-cover rounded-t' src="/images/kacchi.webp" alt="" />
                         </div>
                         <div className='p-4'>
                             <div className='mb-3 flex items-center justify-between'>
