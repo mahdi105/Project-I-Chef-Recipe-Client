@@ -1,14 +1,30 @@
 import { Button, Label, TextInput } from 'flowbite-react';
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../AuthProvider/AuthProvider';
+import { toast } from 'react-hot-toast';
 
+const notify = () => toast.success('Login Successful')
 const Login = () => {
+    const [error, setError] = useState('')
     const {login} = useContext(authContext);
+    const navigate = useNavigate();
+    // const location = useLocation();
+    // const from = 
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
+        const password = form.password.value;
+        console.log(email,password);
+        setError('');
+        login(email, password)
+        .then(result => {
+            form.reset();
+            notify();
+            navigate('/',{replace:true})
+        })
+        .catch(error => setError(error.message));
         
     }
     return (
@@ -43,9 +59,13 @@ const Login = () => {
                             shadow={true}
                         />
                     </div>
-                    <Button type="submit mb-3">
+                    <Button className='mb-3' type="submit">
                         Register new account
                     </Button>
+                    {
+                        error && 
+                        <p className='text-[13px] text-red-500 mb-3'>{error}</p>
+                    }
                     <hr className='mb-1' />
                     <p>Not a member yet? Please<Link to='/register' className='text-blue-500 font-bold'> Sign Up</Link></p>
                 </form>
