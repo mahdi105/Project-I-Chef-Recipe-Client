@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { Rating } from '@smastrom/react-rating';
 
-const notifySuccess = () => toast.success("Added to favourite list");
+
 const RecipeCard = ({ recipe }) => {
+    const [isFavourite, setFavourite] = useState(false);
     const { name, image, process, rating, ingredients } = recipe;
+    const notifySuccess = () => {
+        toast.success("The recipe is your favorite");
+        return setFavourite(!isFavourite);
+    };
     return (
         <div className='shadow-md rounded-md relative'>
             <div>
@@ -30,7 +35,7 @@ const RecipeCard = ({ recipe }) => {
                     }
                 </ul>
             </div>
-            <button onClick={notifySuccess} className='absolute bottom-0 py-3 w-full rounded-b text-white hover:text-black transition-all duration-300 font-bold text-[14px] hover:bg-[#f6a04a] bg-[#976736]'>Favourite</button>
+            <input type='submit' disabled={isFavourite} onClick={notifySuccess} className={`absolute bottom-0 py-3 w-full rounded-b  transition-all duration-300 font-bold text-[14px] ${!isFavourite ? `text-white hover:text-black hover:bg-[#f6a04a] bg-[#976736]`: `hover:bg-none bg-gray-100 text-gray-500`}`} value="Favourite"/>
         </div>
     );
 };
