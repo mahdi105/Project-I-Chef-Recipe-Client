@@ -4,6 +4,8 @@ import { FaGlobeAmericas } from "react-icons/fa";
 
 const Banner = () => {
     return (
+        
+        // Banner Section
         <section id='banner' className='py-36'>
             <div className='container mx-auto px-2 md:px-0 lg:px-10'>
                 <div className='md:w-4/6 mx-auto'>

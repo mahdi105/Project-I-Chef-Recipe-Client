@@ -6,6 +6,7 @@ import './ChefCard.css'
 const ChefCard = ({ chef }) => {
     const {id,name,image,experience,recipes,likes} = chef;
     return (
+        // Card for each Chef and Chef details
         <div className="card bg-base-100 shadow-md rounded-md">
             <figure className="px-10 pt-10 mb-2 flex justify-center bg-[#9767363b] rounded-t-md">
                 <LazyLoad height={250} offset={300} threshold={0.95}>

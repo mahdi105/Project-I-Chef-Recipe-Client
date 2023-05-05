@@ -11,6 +11,7 @@ const Chefs = () => {
         .catch(error => console.log(error.message));
     },[]);
     return (
+        // Chef's card container
         <section className='container mx-auto px-2 md:px-0 lg:px-10 pt-20 pb-28'>
             <SectionHeading>Popular Indian Chefs</SectionHeading>
             <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>

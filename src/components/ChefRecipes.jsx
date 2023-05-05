@@ -22,6 +22,7 @@ const ChefRecipes = () => {
         setChef(newchef);
     },[chefs]);
     return (
+        // Chef Details and Recipes Page
         <main>
             <section className='bg-slate-100'>
                 <div className='container mx-auto px-2 md:px-0 lg:px-10 grid grid-cols-1 md:grid-cols-6 py-6 gap-10'>

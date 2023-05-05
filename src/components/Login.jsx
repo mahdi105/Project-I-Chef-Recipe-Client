@@ -50,6 +50,7 @@ const Login = () => {
         .then(error => setError(error.message))
     }
     return (
+        // Login Page
         <div className='container mx-auto px-2 md:px-0 lg:px-10 py-20'>
             <div className='mx-auto mb-5 max-w-[500px] p-5 rounded-md border border-gray-100 shadow-sm'>
                 <h1 className='text-center mb-4 font-extrabold text-[35px]'>Log In</h1>

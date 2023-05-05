@@ -8,6 +8,7 @@ const ErrorElement = () => {
     const navigate = useNavigate();
 
     return (
+        // Error Component
         <main className='flex justify-center h-[100vh] items-center'>
             <div>
                 <div className='flex flex-col items-center gap-1 mb-3'>

@@ -8,8 +8,8 @@ import { updateProfile } from 'firebase/auth';
 const notify = () => toast.success('Registration Successful');
 const Register = () => {
     const [error, setError] = useState('');
-    const {createUser, user} = useContext(authContext);
-    const navigate = useNavigate();
+    const {createUser, user} = useContext(authContext);//Auth context
+    const navigate = useNavigate(); 
     const profileUpdate = (userName, photo, cUser) => {
         console.log(userName, photo);
         updateProfile(cUser, {

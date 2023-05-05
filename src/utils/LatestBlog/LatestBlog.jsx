@@ -3,6 +3,7 @@ import SectionHeading from '../SectionHeading/SectionHeading';
 
 const LatestBlog = () => {
     return (
+        // Blog section
         <section className='bg-[#F0F0F0]'>
             <div className='container mx-auto px-2 md:px-0 lg:px-10 pt-16 pb-24'>
                 <SectionHeading>Latest Blog</SectionHeading>

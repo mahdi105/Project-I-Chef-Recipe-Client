@@ -11,12 +11,16 @@ const RecipeCard = ({ recipe }) => {
         return setFavourite(!isFavourite);
     };
     return (
+        // Recipe card for each recipe
         <div className='shadow-md rounded-md relative'>
             <div>
+                {/* Image */}
                 <img src={image} className='rounded-t mb-3 w-full min-h-[270px]' alt="" />
             </div>
             <div className='p-2 mb-16'>
+                {/* Title */}
                 <h2 className='text-xl mb-2 text-center font-bold'>{name}</h2>
+                {/* Rating */}
                 <div className='flex items-center justify-center gap-2 mb-3'>
                     <span>Rating: </span>
                     <Rating
@@ -27,6 +31,7 @@ const RecipeCard = ({ recipe }) => {
                     <span>{rating}</span>
                 </div>
                 <hr />
+                {/* Details */}
                 <p className='mt-3 text-justify mb-4'><strong>Process: </strong><span className='text-[13px]'>{process}</span></p>
                 <h3 className='font-bold text-[14px] mb-2'>Ingredients</h3>
                 <ul className='mb-4'>
