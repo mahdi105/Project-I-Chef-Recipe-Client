@@ -1,11 +1,21 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter } from "react-icons/fa";
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import './Header.css'
+import { authContext } from '../../AuthProvider/AuthProvider';
 
 const Header = () => {
     const [open, setOpen] = useState(false);
+    const {user,logout} = useContext(authContext);
+    const name = user !== null && user.displayName;
+    const photo = user !== null && user.photoURL;
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        logout()
+        .then(()=> {})
+        .catch(error => console.log(error.message))
+    }
     return (
         <header>
             <section className='shadow-sm'>
@@ -48,8 +58,13 @@ const Header = () => {
                         </NavLink>
                     </nav>
                     <div className='flex items-center gap-5'>
-                        <button className='py-3 px-4  rounded-md transition-all duration-300 hover:bg-gray-600 hover:text-white font-semibold'>Logout</button>
-                        <img className='w-[60px]' src="/logo.png" alt="" />
+                        <button onClick={handleLogout} className='py-2 px-4 border border-gray-600 rounded-md transition-all duration-300 hover:bg-gray-600 hover:text-white font-semibold'>Logout</button>
+                       {
+                        user !== null ?
+                        <img className='object-cover w-[50px] h-[50px] rounded-full border border-slate-200' title={name} src={photo}/>
+                        :
+                        <button onClick={() => navigate('/login')} className='py-2 px-4 border border-gray-600 rounded-md transition-all duration-300 hover:bg-gray-600 hover:text-white font-semibold'>Login</button>
+                       }
                     </div>
                 </div>
             </section>

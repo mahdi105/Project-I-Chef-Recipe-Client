@@ -3,26 +3,27 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../AuthProvider/AuthProvider';
 import { toast } from 'react-hot-toast';
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from 'react-icons/fa';
 
 const notify = () => toast.success('Login Successful')
 const Login = () => {
     const [error, setError] = useState('')
     const {login} = useContext(authContext);
     const navigate = useNavigate();
-    // const location = useLocation();
-    // const from = 
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || '/';
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email,password);
         setError('');
         login(email, password)
         .then(result => {
             form.reset();
             notify();
-            navigate('/',{replace:true})
+            navigate(from,{replace:true})
         })
         .catch(error => setError(error.message));
         
@@ -60,14 +61,24 @@ const Login = () => {
                         />
                     </div>
                     <Button className='mb-3' type="submit">
-                        Register new account
+                        Sign In
                     </Button>
                     {
                         error && 
                         <p className='text-[13px] text-red-500 mb-3'>{error}</p>
                     }
                     <hr className='mb-1' />
-                    <p>Not a member yet? Please<Link to='/register' className='text-blue-500 font-bold'> Sign Up</Link></p>
+                    <p className='mb-5'>Not a member yet? Please<Link to='/register' className='text-blue-500 font-bold'> Sign Up</Link></p>
+                    <div className='max-w-[90%] mx-auto flex flex-col gap-3'>
+                        <button className='py-2 px-20 flex items-center justify-center gap-1 border border-slate-100 shadow-md rounded-md outline outline-[1.5px] outline-transparent hover:outline-slate-900 hover:shadow-none transition-all duration-300'>
+                            <FcGoogle/>
+                            <span>Continue With Google</span>
+                        </button>
+                        <button className='py-2 px-20 flex items-center justify-center gap-1 border border-slate-100 shadow-md rounded-md outline outline-[1.5px] outline-transparent hover:outline-slate-900 hover:shadow-none transition-all duration-300'>
+                            <FaGithub/>
+                            <span>Continue With GitHub</span>
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

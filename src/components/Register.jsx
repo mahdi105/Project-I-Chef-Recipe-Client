@@ -45,8 +45,6 @@ const Register = () => {
         .catch(error => setError(error.message));
 
     }
-    console.log(user && user);
-
     return (
         <div className='container mx-auto px-2 md:px-0 lg:px-10 py-20'>
             <div className='mx-auto mb-5 max-w-[500px] p-5 rounded-md border border-gray-100 shadow-sm'>

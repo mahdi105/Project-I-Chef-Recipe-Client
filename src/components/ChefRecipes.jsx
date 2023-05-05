@@ -10,7 +10,6 @@ const ChefRecipes = () => {
     const chefrecipes = useLoaderData();//particular recipes
     const chefId = chefrecipes[0]?.chef_id;
     const {name, image, bio, likes, recipes, experience} = chef || {};
-    console.log(chef,chefrecipes);
     useEffect(() => {
         fetch('https://assignment-recipes-server-mahdi105.vercel.app/chefs')
             .then(res => res.json())
