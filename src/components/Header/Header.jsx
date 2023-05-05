@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FaFacebook, FaInstagram, FaPinterest, FaTwitter } from "react-icons/fa";
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
 import './Header.css'
@@ -47,15 +47,13 @@ const Header = () => {
                         <NavLink to="/blog" className={({ isActive }) => isActive ? "active w-40 md:w-[auto]" : "w-40 md:w-[auto]"}>
                             Blog
                         </NavLink>
-                        <NavLink to="/about" className={({ isActive }) => isActive ? "active w-40 md:w-[auto]" : "w-40 md:w-[auto]"}>
-                            About Us
-                        </NavLink>
                         <NavLink to="/login" className={({ isActive }) => isActive ? "active w-40 md:w-[auto]" : "w-40 md:w-[auto]"}>
                             Login
                         </NavLink>
                         <NavLink to="/register" className={({ isActive }) => isActive ? "active" : ""}>
                             Register
                         </NavLink>
+                        
                     </nav>
                     <div className='flex items-center gap-5'>
                         <button onClick={handleLogout} className='py-2 px-4 border border-gray-600 rounded-md transition-all duration-300 hover:bg-gray-600 hover:text-white font-semibold'>Logout</button>
