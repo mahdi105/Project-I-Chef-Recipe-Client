@@ -16,7 +16,7 @@ const Footer = () => {
                     <div className='flex flex-col gap-3'>
                         <Link className='transition-all text-[14px] duration-300 font-[500] text-slate-200 hover:text-[#9d6b38]' to='/'>Browse Recipe</Link>
                         <Link className='transition-all text-[14px] duration-300 font-[500] text-slate-200 hover:text-[#9d6b38]' to='/'>Submit a Recipe</Link>
-                        <Link className='transition-all text-[14px] duration-300 font-[500] text-slate-200 hover:text-[#9d6b38]' to='/'>Out Chefs</Link>
+                        <Link className='transition-all text-[14px] duration-300 font-[500] text-slate-200 hover:text-[#9d6b38]' to='/'>Top Chefs</Link>
                         <Link className='transition-all text-[14px] duration-300 font-[500] text-slate-200 hover:text-[#9d6b38]' to='/'>Recipe Details</Link>
                         <Link className='transition-all text-[14px] duration-300 font-[500] text-slate-200 hover:text-[#9d6b38]' to='/'>Latest News</Link>
                     </div>

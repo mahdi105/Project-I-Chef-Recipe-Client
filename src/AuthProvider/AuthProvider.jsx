@@ -14,7 +14,7 @@ const AuthProvider = ({children}) => {
     const githubProvider = new GithubAuthProvider();
 
     // Google Login
-    const gooleLogin = () => {
+    const googleLogin = () => {
         setLoading(true);
         return signInWithPopup(auth,googleProvider);
     }
@@ -61,7 +61,7 @@ const AuthProvider = ({children}) => {
         login,
         logout,
         auth,
-        gooleLogin,
+        googleLogin,
         githubLogin
     }
     return (

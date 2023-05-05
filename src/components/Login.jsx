@@ -9,10 +9,12 @@ import { FaGithub } from 'react-icons/fa';
 const notify = () => toast.success('Login Successful')
 const Login = () => {
     const [error, setError] = useState('')
-    const {login} = useContext(authContext);
+    const {login, googleLogin, githubLogin} = useContext(authContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location?.state?.from?.pathname || '/';
+
+    // Login with email and password handler
     const handleLogin = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -27,6 +29,25 @@ const Login = () => {
         })
         .catch(error => setError(error.message));
         
+    }
+
+    // Login with Google Account handler
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            notify();
+            navigate(from,{replace:true})
+        })
+        .then(error => setError(error.message))
+    }
+    // Login with GitHub Account handler
+    const handleGitHubLogin = () => {
+        githubLogin()
+        .then(result => {
+            notify();
+            navigate(from,{replace:true})
+        })
+        .then(error => setError(error.message))
     }
     return (
         <div className='container mx-auto px-2 md:px-0 lg:px-10 py-20'>
@@ -70,11 +91,11 @@ const Login = () => {
                     <hr className='mb-1' />
                     <p className='mb-5'>Not a member yet? Please<Link to='/register' className='text-blue-500 font-bold'> Sign Up</Link></p>
                     <div className='max-w-[90%] mx-auto flex flex-col gap-3'>
-                        <button className='py-2 px-20 flex items-center justify-center gap-1 border border-slate-100 shadow-md rounded-md outline outline-[1.5px] outline-transparent hover:outline-slate-900 hover:shadow-none transition-all duration-300'>
+                        <button onClick={handleGoogleLogin} className='py-2 px-20 flex items-center justify-center gap-1 border border-slate-100 shadow-md rounded-md outline outline-[1.5px] outline-transparent hover:outline-slate-900 hover:shadow-none transition-all duration-300'>
                             <FcGoogle/>
                             <span>Continue With Google</span>
                         </button>
-                        <button className='py-2 px-20 flex items-center justify-center gap-1 border border-slate-100 shadow-md rounded-md outline outline-[1.5px] outline-transparent hover:outline-slate-900 hover:shadow-none transition-all duration-300'>
+                        <button onClick={handleGitHubLogin} className='py-2 px-20 flex items-center justify-center gap-1 border border-slate-100 shadow-md rounded-md outline outline-[1.5px] outline-transparent hover:outline-slate-900 hover:shadow-none transition-all duration-300'>
                             <FaGithub/>
                             <span>Continue With GitHub</span>
                         </button>
